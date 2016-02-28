@@ -29,3 +29,13 @@ Video 3
     PromptContainer.js (template strings)
     ResultsContainer.js (concise objects)
     githubHelpers.js
+Video 4
+  npm install --save-dev babel-preset-stage-3 babel-polyfill
+  add babel-preset-stage-3 to .babelrc
+  add 'babel-polyfill' to entry[0] in webpack config
+  Native Promises (.all)
+  Async/Await
+  Files to Change
+    ConfirmBattleContainer.js
+    ResultsContainer.js
+    githubHelpers.js
