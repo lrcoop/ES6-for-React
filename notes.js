@@ -39,3 +39,9 @@ Video 4
     ConfirmBattleContainer.js
     ResultsContainer.js
     githubHelpers.js
+Video 5
+  Classes
+  Files to Change
+    ConfirmBattleContainer.js
+    PromptContainer.js
+    ResultsContainer.js
