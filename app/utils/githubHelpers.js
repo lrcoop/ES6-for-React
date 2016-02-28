@@ -1,15 +1,15 @@
 import axios from 'axios'
 
-const id = "YOUR_CLIENT_ID";
-const sec = "YOUR_SECRET_ID";
-const param = "?client_id=" + id + "&client_secret=" + sec;
+const id = "YOUR_CLIENT_ID"
+const sec = "YOUR_SECRET_ID"
+const param = `?client_id=${id}&client_secret=${sec}`
 
-function getUserInfo (username) {
-  return axios.get('https://api.github.com/users/' + username + param);
+function getUserInfo (username = 'tylermcginnis') {
+  return axios.get(`https://api.github.com/users/${username + param}`)
 }
 
-function getRepos (username) {
-  return axios.get('https://api.github.com/users/' + username + '/repos' + param + '&per_page=100');
+function getRepos (username = 'tylermcginnis') {
+  return axios.get(`https://api.github.com/users/${username}/repos${param}&per_page=100`)
 }
 
 function getTotalStars (repos) {
@@ -22,7 +22,7 @@ function getPlayersData (player) {
     .then((totalStars) => (
       {
         followers: player.followers,
-        totalStars: totalStars
+        totalStars
       }
     ))
 }
@@ -37,12 +37,12 @@ function calculateScores (players) {
 export function getPlayersInfo (players) {
   return axios.all(players.map((username) => getUserInfo(username)))
     .then((info) => info.map((user) => user.data))
-    .catch(function (err) {console.warn('Error in getPlayersInfo: ', err)})
+    .catch((err) => {console.warn('Error in getPlayersInfo: ', err)})
 }
 
 export function battle (players) {
-  const playerOneData = getPlayersData(players[0]);
-  const playerTwoData = getPlayersData(players[1]);
+  const playerOneData = getPlayersData(players[0])
+  const playerTwoData = getPlayersData(players[1])
   return axios.all([playerOneData, playerTwoData])
     .then(calculateScores)
     .catch((err) => {console.warn('Error in getPlayersInfo: ', err)})

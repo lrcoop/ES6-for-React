@@ -17,3 +17,15 @@ Video 2
     PromptContainer.js
     ResultsContainer.js
     githubHelpers.js
+Video 3
+  Template Strings
+  Default Parameters
+  Concise Objects
+  Files to Change
+    ConfirmBattle.js
+    MainContainer.js
+    Results.js
+    UserDetailsWrapper.js
+    PromptContainer.js (template strings)
+    ResultsContainer.js (concise objects)
+    githubHelpers.js
